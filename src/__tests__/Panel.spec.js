@@ -12,4 +12,10 @@ describe('<Panel />', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Panel />, div);
   });
+
+  it('makes sure all buttons are rendering', () => {
+    const wrapper = shallow(<Panel />);
+    const buttonCount = wrapper.find('Button').length;
+    expect(buttonCount).toBe(19);
+  });
 });

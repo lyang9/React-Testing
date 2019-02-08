@@ -12,4 +12,22 @@ describe('<Button />', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Button />, div);
   });
+
+  it('should render a button', () => {
+    const wrapper = shallow(<Button />);
+    const elements = wrapper.find('button');
+    expect(elements.length).toBe(1);
+  });
+
+  it('should render orange button', () => {
+    const wrapper = shallow(<Button orange />);
+    const elements = wrapper.find('.orange');
+    expect(elements.length).toBe(1);
+  });
+
+  it('renders a wide button', () => {
+    const wrapper = shallow(<Button wide />);
+    const elements = wrapper.find('.wide');
+    expect(elements.length).toBe(1);
+  });
 });

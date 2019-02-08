@@ -12,4 +12,10 @@ describe('<Display />', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Display />, div);
   });
+
+  it('makes sure display is rendering', () => {
+    const wrapper = shallow(<Display />);
+    const elements = wrapper.find('.component-display');
+    expect(elements.length).toBe(1);
+  });
 });

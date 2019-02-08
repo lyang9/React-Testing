@@ -12,4 +12,22 @@ describe('<App />', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
   });
+
+  it('calc should have a default display value of 0', () => {
+    const wrapper = shallow(<App />);
+    const instance = wrapper.instance();
+    expect(instance.state.total).toEqual('0');
+  });
+
+  it('should render display component', () => {
+    const wrapper = shallow(<App />);
+    const elements = wrapper.find('Display');
+    expect(elements.length).toBe(1);
+  });
+
+  it('should render Panel component', () => {
+    const wrapper = shallow(<App />);
+    const elements = wrapper.find('Panel');
+    expect(elements.length).toBe(1);
+  });
 });
